@@ -1,0 +1,29 @@
+<app-sign-out></app-sign-out>
+<!--
+<ul class="user">
+  <li *ngFor="let user of users">
+    {{user.signed_in}}
+  </li>
+</ul>
+-->
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let article of articles">
+    <td>{{article.id}}</td>
+    <td><button class="title" routerLink="./{{article.id}}">{{article.title}}</button></td>
+    <td>{{get_authorname_of_article(article.author_id)}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button class="create" id="create-article-button" routerLink="./create">Create</button>
+</div>
+

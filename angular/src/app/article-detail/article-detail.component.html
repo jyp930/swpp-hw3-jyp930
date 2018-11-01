@@ -1,0 +1,48 @@
+<app-sign-out></app-sign-out>
+<!--
+<ul class="user">
+  <li *ngFor="let user of users">
+    {{user.signed_in}}
+  </li>
+</ul>
+-->
+
+<div *ngIf="article" class="container">
+  <div>
+    <label class="label1">제목</label><br>
+    <h2 id="article-title">{{article.title}}</h2>
+    <label class="label1">글쓴이</label><br>
+    <p id="article-author">{{get_authorname_of_article(article.author_id)}}</p>
+    <label class="label1">내용</label><br>
+    <p id="article-content">{{article.content}}</p>
+
+    <button class="article-button-back" id="back-detail-article-button" (click)="back()">Back</button>
+    <ng-container *ngIf="(article.author_id === authoried_user); else hide_button_for_article">
+      <button class="article-button-edit" id="edit-article-button" routerLink="./edit">Edit</button>
+      <button class="article-button-delete" id="delete-article-button" (click)="delete_article()">Delete</button>
+    </ng-container>
+    <ng-template #hide_button_for_article></ng-template>
+  </div>
+
+  <br><br>
+  <h2>댓글</h2>
+    <input #comment_content_ id="new-comment-content-input" [(ngModel)]="comment_content" type="text" />
+    <button class="comment-confirm" id="confirm-create-comment-button" (click)="create_comment(); comment_content_.value=''">등록</button>
+  <ul class="comments">
+    <li *ngFor="let comment of comments">
+      <div>
+        <form class="form-inline">
+          <label class="label2">작성자</label>
+          <p>{{get_authorname_of_comment(comment.author_id)}}</p>
+        </form>
+        <p class="comment_content">{{comment.content}}
+        <ng-container *ngIf="(comment.author_id === authoried_user); else hide_button_for_comment">
+          <button class="comment-update" id="edit-comment-button" (click)="update_comment(comment)">수정</button>
+          <button class="comment-delete" id="delete-comment-button" (click)="delete_comment(comment)">삭제</button>
+        </ng-container>
+        <ng-template #hide_button_for_comment></ng-template>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

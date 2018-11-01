@@ -1,0 +1,81 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.unClicked_tab {
+  background-color: white;
+  border: 1px solid mediumpurple;
+  color: darkorchid;
+  width: 150px;
+  padding: 7px 0px;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+.Clicked_tab {
+  background-color: darkorchid;
+  border: 1px solid mediumpurple;
+  color: white;
+  width: 150px;
+  padding: 7px 0px;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+
+.create, .back {
+  background-color: mediumpurple;
+  color: white;
+  padding: 7px 0px;
+  margin: 8px 2px;
+  border: none;
+  cursor: pointer;
+  width: 90px;
+}
+
+input[type=text] {
+  width: 300px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 2px solid darkorchid;
+  border-radius: 3px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus, textarea:focus {
+  width: 100%;
+}
+
+textarea {
+  width: 300px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid darkorchid;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#WriteTab, #PreviewTab {
+  /*background: #cccccc;
+  width: 300px;*/
+}
+label {
+  margin-bottom: 0;
+}
+.label2 {
+  margin-bottom: 0;
+  text-decoration-line: underline;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+hr {
+  width: 100%;
+  margin-left: 0;
+}

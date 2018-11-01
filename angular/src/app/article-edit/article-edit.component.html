@@ -1,0 +1,28 @@
+<app-sign-out></app-sign-out>
+
+<nav class="container">
+<div *ngIf="article">
+<div>
+  <button class="Clicked_tab" id="write-tab-button"(click)="view_write_tab()">Write</button>
+  <button class="unClicked_tab" id="preview-tab-button"(click)="view_preview_tab()">Preview</button>
+</div>
+  <hr>
+  <div *ngIf="view_write">
+    <label>제목</label><br>
+    <input id="article-title-input" [(ngModel)]="article.title" value="{{article.title}}" type="text"><br>
+    <label>내용</label><br>
+    <textarea id="article-content-input" [(ngModel)]="article.content" value="{{article.content}}" cols="30" rows="10"></textarea>
+  </div>
+  <div *ngIf="!view_write">
+    <label class="label2">제목</label>
+    <h3 id="article-title">{{article.title}}</h3>
+    <label class="label2">글쓴이</label>
+    <p id="article-author">{{get_authorname()}}</p>
+    <label class="label2">내용</label>
+    <p id="article-content">{{article.content}}</p>
+  </div>
+  <button class="back" id="back-edit-article-button" (click)="back()">Back</button>
+  <button class="confirm" id="confirm-edit-article-button" (click)="confirm_edit_article()">Confirm</button>
+</div>
+</nav>
+

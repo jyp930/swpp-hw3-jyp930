@@ -1,0 +1,119 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.label1 {
+  margin-bottom: 0;
+  text-decoration-line: underline;
+  font-weight: bold;
+}
+
+.article-button-back, .article-button-delete, .article-button-edit {
+  padding: 4px 18px;
+  background-color: white;
+  color: black;
+  border: 1px solid mediumslateblue;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.article-button-back:hover, .article-button-delete:hover, .article-button-edit:hover {
+  background-color: mediumslateblue;
+  color: white;
+}
+.article-button-delete, .article-button-edit {
+  float: right;
+  margin-left: 3px;
+}
+
+input {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid darkorchid;
+  border-radius: 3px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus, textarea:focus {
+  width: 50%;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.comment-confirm {
+  position: relative;
+  background-color: orchid;
+  border: none;
+  font-size: 18px;
+  color: #FFFFFF;
+  width: 70px;
+  padding: 8px 0;
+  margin-left: 4px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.comment-confirm:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.comment-confirm:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.comment_content {
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.label2 {
+
+}
+
+form p, form label {
+  margin-bottom: 0;
+}
+form p {
+  margin-left: 10px;
+  color: blueviolet;
+}
+.comment_content {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.comment-update, .comment-delete {
+  font-style: oblique;
+  color: orchid;
+  text-decoration-line: underline;
+  background: none;
+  border: none;
+}
+.comment-update {
+  margin-left: 10px;
+}
