@@ -83,10 +83,10 @@ def articleList(request):
         return HttpResponseNotAllowed(['GET', 'POST'])
 
 
-def articleDetail(request, pk):
+def articleDetail(request, article_id):
     if request.method == 'GET' or request.method == 'PUT' or request.method == 'DELETE':
         if request.user.is_authenticated:
-            article = get_object_or_404(Article, id = pk)
+            article = get_object_or_404(Article, id = article_id)
             if request.method == 'GET':
                 return JsonResponse({'title': article.title, 'content': article.content, 'author': article.author.id}, safe=False)
             else:
@@ -111,10 +111,10 @@ def articleDetail(request, pk):
         return HttpResponseNotAllowed(['GET', 'PUT', 'DELETE'])
 
 #Comment View
-def commentOfArticle(request, pk):
+def commentOfArticle(request, article_id):
     if request.method == 'GET' or request.method == 'POST':
         if request.user.is_authenticated:
-            article = get_object_or_404(Article, id = pk)
+            article = get_object_or_404(Article, id = article_id)
             if request.method == 'GET':
                 comment_list = []
                 for comment in Comment.objects.filter(article=article):
@@ -134,10 +134,10 @@ def commentOfArticle(request, pk):
         return HttpResponseNotAllowed(['GET', 'POST'])
 
 
-def commentDetail(request, pk):
+def commentDetail(request, comment_id):
     if request.method == 'GET' or request.method == 'PUT' or request.method == 'DELETE':
         if request.user.is_authenticated:
-            comment = get_object_or_404(Comment, id = pk)
+            comment = get_object_or_404(Comment, id = comment_id)
             if request.method == 'GET':
                 return JsonResponse({'article': comment.article.id, 'content': comment.content, 'author': comment.author.id}, safe=False)
             else:
